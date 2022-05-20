@@ -36,23 +36,32 @@ const Game = () => {
         var yetti = document.getElementById("yetti");
         var sakkiz = document.getElementById("sakkiz");
         var tuqqiz = document.getElementById("tuqqiz");
-        if (((bir.innerText === "X" && ikki.innerText === "X" && uch.innerText === "X") ||
-            (bir.innerText === "O" && ikki.innerText === "O" && uch.innerText === "O")) ||
-            ((bir.innerText === "X" && turt.innerText === "X" && yetti.innerText === "X") ||
-                (bir.innerText === "O" && turt.innerText === "O" && yetti.innerText === "O")) ||
-            ((bir.innerText === "X" && besh.innerText === "X" && tuqqiz.innerText === "X") ||
-                (bir.innerText === "O" && besh.innerText === "O" && tuqqiz.innerText === "O")) ||
-            ((tuqqiz.innerText === "X" && olti.innerText === "X" && uch.innerText === "X") ||
-                (tuqqiz.innerText === "O" && olti.innerText === "O" && uch.innerText === "O")) ||
-            ((yetti.innerText === "X" && besh.innerText === "X" && uch.innerText === "X") ||
-                (yetti.innerText === "O" && besh.innerText === "O" && uch.innerText === "O")) ||
-            ((yetti.innerText === "X" && sakkiz.innerText === "X" && tuqqiz.innerText === "X") ||
-                (yetti.innerText === "O" && sakkiz.innerText === "O" && tuqqiz.innerText === "O")) ||
-            ((ikki.innerText === "X" && besh.innerText === "X" && sakkiz.innerText === "X") ||
-                (ikki.innerText === "O" && besh.innerText === "O" && sakkiz.innerText === "O")) ||
-            ((turt.innerText === "X" && besh.innerText === "X" && olti.innerText === "X") ||
-                (turt.innerText === "O" && besh.innerText === "O" && olti.innerText === "O"))) {
-            yutdingiz.innerText = "Siz o'yinda yutdingiz !!!";
+        if ((bir.innerText === "X" && ikki.innerText === "X" && uch.innerText === "X") ||
+            (bir.innerText === "X" && turt.innerText === "X" && yetti.innerText === "X") ||
+            (bir.innerText === "X" && besh.innerText === "X" && tuqqiz.innerText === "X") ||
+            (tuqqiz.innerText === "X" && olti.innerText === "X" && uch.innerText === "X") ||
+            (yetti.innerText === "X" && besh.innerText === "X" && uch.innerText === "X") ||
+            (yetti.innerText === "X" && sakkiz.innerText === "X" && tuqqiz.innerText === "X") ||
+            (ikki.innerText === "X" && besh.innerText === "X" && sakkiz.innerText === "X") ||
+            (turt.innerText === "X" && besh.innerText === "X" && olti.innerText === "X"))
+            {
+            yutdingiz.innerText = "O'yinda X yutdi !!!";
+            yutdingiz.style.display = "block"
+            btn.style.display = "block"
+            wrapper.style.display = "none";
+            setSanoq(1);
+            setState(true);
+        }
+        else if((bir.innerText === "O" && ikki.innerText === "O" && uch.innerText === "O")||
+        (tuqqiz.innerText === "O" && olti.innerText === "O" && uch.innerText === "O")||
+        (bir.innerText === "O" && turt.innerText === "O" && yetti.innerText === "O")||
+        (bir.innerText === "O" && besh.innerText === "O" && tuqqiz.innerText === "O")||
+        (yetti.innerText === "O" && besh.innerText === "O" && uch.innerText === "O")||
+        (yetti.innerText === "O" && sakkiz.innerText === "O" && tuqqiz.innerText === "O")||
+        (ikki.innerText === "O" && besh.innerText === "O" && sakkiz.innerText === "O")||
+        (turt.innerText === "O" && besh.innerText === "O" && olti.innerText === "O")
+        ){
+            yutdingiz.innerText = "O'yinda o yutdi !!!";
             yutdingiz.style.display = "block"
             btn.style.display = "block"
             wrapper.style.display = "none";
